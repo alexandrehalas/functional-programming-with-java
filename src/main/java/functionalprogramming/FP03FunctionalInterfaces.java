@@ -15,7 +15,8 @@ public class FP03FunctionalInterfaces {
 		numbers.stream()
 		.filter(isEvenNumber)
 		.map(squareFunction)
-		.forEach(sysoutConsumer);		
+	//	.reduce(0, Integer::sum);
+	    .forEach(sysoutConsumer);		
 	}
 	
 }
