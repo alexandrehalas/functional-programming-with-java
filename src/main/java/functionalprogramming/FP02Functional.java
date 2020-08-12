@@ -10,6 +10,8 @@ public class FP02Functional {
 		sumAllNumbersInListFunctional(numbers);
 		findMaxNumberInListFunctional(numbers);
 		findMinNumberInListFunctional(numbers);
+		sumOfSquareNumberInListFunctional(numbers);  
+		sumOfEvenSquareNumberInListFunctional(numbers);
 		
 	}
 	private static void sumAllNumbersInListFunctional(List<Integer> numbers) {
@@ -28,4 +30,21 @@ public class FP02Functional {
 		int min = numbers.stream().reduce(Integer.MAX_VALUE, (x,y) -> x<y ? x: y);
 		System.out.println(min);
 	}	
+	private static void sumOfSquareNumberInListFunctional(List<Integer> numbers) {
+		System.out.println("SUM OF SQUARE NUMBER:");
+		int sumOfSquare = numbers.stream()
+				.map(number -> number*number)
+				.reduce(0, Integer::sum);
+		System.out.println(sumOfSquare);
+	}
+	
+	private static void sumOfEvenSquareNumberInListFunctional(List<Integer> numbers) {
+		System.out.println("SUM OF EVEN SQUARE NUMBER:");
+		int sumOfEvenSquare = numbers.stream()
+				.filter(number -> number%2 == 0)
+				.map(number -> number*number)
+				.reduce(0, Integer::sum);
+		System.out.println(sumOfEvenSquare);
+	}
+	
 }
